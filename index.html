@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My little Snake</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .game {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .food {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+      }
+
+      .snakeSegment:first-child::after {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 3px;
+        left: 10px;
+      }
+
+      .snakeSegment {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        transition: transform 0.2s linear, border-radius 0.2s ease-in-out;
+        background-color: green;
+      }
+
+      .turn-top-left {
+        border-top-left-radius: 20px;
+      }
+
+      .turn-top-right {
+        border-top-right-radius: 20px;
+      }
+
+      .turn-bottom-left {
+        border-bottom-left-radius: 20px;
+      }
+
+      .turn-bottom-right {
+        border-bottom-right-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game" class="game"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
